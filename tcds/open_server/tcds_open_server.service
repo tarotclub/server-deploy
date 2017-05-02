@@ -1,0 +1,15 @@
+[Unit]
+Description=tcds_open_server
+
+[Service]
+WorkingDirectory=/opt/tcds
+ExecStart=/opt/tcds/tarotclub-srv -w /opt/tcds/open_server
+Restart=alway
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=tcds
+Environment='PATH=/usr/bin:/usr/local/bin:/opt/tcds
+User=tarot
+
+[Install]
+WantedBy=multi-user.target
