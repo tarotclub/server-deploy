@@ -1,0 +1,16 @@
+[Unit]
+Description=tarotclubweb
+
+[Service]
+WorkingDirectory=/opt/www/tarotclub/tarotclub/www
+ExecStart=/usr/bin/node /opt/www/tarotclub/tarotclub/www/app.js
+Restart=alway
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=tarotclubweb
+Environment='NODE_ENV=production'
+User=d8s
+
+[Install]
+WantedBy=multi-user.target
+
